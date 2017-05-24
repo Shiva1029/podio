@@ -1,0 +1,42 @@
+<nav class="breadcrumb">
+    <a class="breadcrumb-item" href ui-sref="userStories">User Stories</a> >
+    <a class="breadcrumb-item" href ui-sref="userStory({storyId: story.id})">{{story.name}}</a> >
+    <span class="breadcrumb-item active">{{task.name}}</span>
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <h2>{{task.name}} - Tasks</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <table class="table table-condensed table-hover" ng-scrollbars>
+                <thead>
+                <tr>
+                    <th class="columnDef">Name</th>
+                    <th class="columnDef">Role</th>
+                    <th class="columnDef">Type</th>
+                    <th class="columnDef">Premium</th>
+                    <th class="columnDef">Rank</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="columnDef"><a href="{{task.url}}">{{task.name}}</a></td>
+                    <td class="columnDef"><span class="popOverParent" popover-is-open="showCommentPopup"
+                              off-click="showCommentPopup = false" popover-position="bottom"
+                              uib-popover-template="'templates/rights.html'" popover-title="Rights"><a
+                            href>{{task.role}}</a></span>
+                    </td>
+                    <td class="columnDef">{{task.type}}</td>
+                    <td class="columnDef"><span ng-if="task.premium" class="glyphicon glyphicon-ok true" aria-hidden="true"></span><span
+                            ng-if="!task.premium" class="glyphicon glyphicon-remove false" aria-hidden="true"></span>
+                    </td>
+                    <td class="columnDef"><span class="makeStrong">{{task.rank}}</span></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

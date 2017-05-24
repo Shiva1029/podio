@@ -1,0 +1,12 @@
+<div class="row userStoryContainer" ng-repeat="story in userStories">
+        <div class="col-sm-2">
+            <img src="{{story.image.link}}" class="img-thumbnail float-left storyImage">
+        </div>
+        <div class="col-sm-6">
+            <h2><a href ui-sref="userStory({storyId: story.id})">{{story.name}}</a></h2>
+            <ul><li ng-repeat="task in story.spaces">
+                <a href ui-sref="task({storyId: story.id, taskId: task.id})">{{task.name}}</a>
+            </li></ul>
+        </div>
+    </div>
+</div>

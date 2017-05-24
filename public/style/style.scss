@@ -1,0 +1,81 @@
+[ng\:cloak], [ng-cloak], .ng-cloak {
+  display: none !important;
+}
+
+.storyLink:hover {
+  background-color: dodgerblue;
+}
+
+.taskLink:hover {
+  background-color: deepskyblue;
+}
+
+.true {
+  color: green;
+}
+
+.false {
+  color: red;
+}
+
+.makeStrong {
+  font-weight: bold;
+}
+
+.columnDef {
+  padding: 5px;
+  margin: 5px;
+}
+
+.makeRelative {
+  position: relative;
+}
+
+.searchSuggestions {
+  position: absolute;
+  z-index: 1;
+  min-width: 196px;
+  background-color: #ffffff;
+}
+
+.userStorySearch {
+  border: 1px solid grey;
+  padding: 2px;
+}
+
+.taskSearch {
+  margin-left: 6px;
+  border-bottom: 1px solid gainsboro;
+}
+
+.popOverParent {
+  width: 100px;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.rightsPopover {
+  z-index: 9999;
+  position: fixed;
+  background: white;
+  border: 1px solid grey;
+  width: 120px;
+  word-break: break-all;
+  height: 280px;
+  padding-left: 5px;
+  padding-top: 5px;
+  padding-right: 16px;
+}
+
+.userStoryContainer {
+  border-bottom: 1px solid silver;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.storyImage {
+  width: 128px;
+  height: 128px;
+}

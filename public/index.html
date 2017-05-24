@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Stories</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body ng-app="userStories" ng-controller="mainController">
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Podio</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <form class="navbar-form navbar-left makeRelative">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search" ng-keypress="key($event);" ng-model="searchTerm">
+                </div>
+                <div ng-if="searchTerm" class="searchSuggestions" ng-cloak>
+                    <div class="dropdown userStorySearch" ng-repeat="story in userStories | filter:searchTerm">
+                        <a href ui-sref="userStory({storyId: story.id})" class="storyLink"><i class="fa fa-user"
+                                                                                              aria-hidden="true"></i>
+                            {{story.name}}</a>
+                        <div class="dropdown taskLink taskSearch"
+                             ng-repeat="task in story.spaces"><a href
+                                                                 ui-sref="task({storyId: story.id, taskId: task.id})">{{task.name}}</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<div class="container" data-ui-view>
+</div>
+</body>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="bower_components/ng-scrollbars/dist/scrollbars.min.js"></script>
+<script src="bower_components/angular-off-click/dist/angular-off-click.min.js"></script>
+<script src="bower_components/angular-ui-bootstrap/ui-bootstrap-2.5.0.min.js"></script>
+
+<script src="js/app.module.js"></script>
+<script src="js/filter.js"></script>
+<script src="js/routes.config.js"></script>
+<script src="js/scrollbar.config.js"></script>
+<script src="js/controllers/main.controller.js"></script>
+<script src="js/services/main.service.js"></script>
+<script src="js/controllers/task.controller.js"></script>
+<script src="js/controllers/userStories.controller.js"></script>
+<script src="js/controllers/userStory.controller.js"></script>
+</html>

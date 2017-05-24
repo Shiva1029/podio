@@ -1,0 +1,17 @@
+<nav class="breadcrumb">
+    <a class="breadcrumb-item" href ui-sref="userStories">User Stories</a> >
+    <span class="breadcrumb-item active" href>{{story.name}}</span>
+</nav>
+<div class="row userStoryContainer">
+    <div class="col-sm-2">
+        <img src="{{story.image.link}}" class="img-thumbnail float-left" width="128" height="128">
+    </div>
+    <div class="col-sm-6">
+        <h2><a href ui-sref="userStory({storyId: story.id})">{{story.name}}</a></h2>
+        <ul>
+            <li ng-repeat="task in story.spaces">
+                <a href ui-sref="task({storyId: story.id, taskId: task.id})">{{task.name}}</a>
+            </li>
+        </ul>
+    </div>
+</div>
